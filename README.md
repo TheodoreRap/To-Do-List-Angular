@@ -2,6 +2,6 @@
 
 A To Do List using
 
-*HTML
-*Javascript
-*Angular Framework
+* HTML
+* Javascript
+* Angular Framework
