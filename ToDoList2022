@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+
+<p style="font-size:25px;"> TO DO LIST <p>
+
+<script>
+var app = angular.module("ToDoList2022", []); 
+app.controller("myCtrl", function($scope) {
+    $scope.wishes = ["Climb Everest", "Learn To Play the Piano", "Buy New Car", "Go Out With Friends More"];
+    
+    $scope.addWish = function () { // Add something to the list
+        $scope.errortext = "";
+        if (!$scope.addMe) {return;}        
+        if ($scope.wishes.indexOf($scope.addMe) == -1) {
+            $scope.wishes.push($scope.addMe);
+        } else {
+            $scope.errortext = "You can't add the same thing twice";
+        }
+    }
+    
+    $scope.removeWish = function (x) {  // Remove something from the list
+        $scope.errortext = "";    
+        $scope.wishes.splice(x, 1);
+    }
+});
+</script>
+
+<div ng-app="ToDoList2022" ng-controller="myCtrl">
+  <ul>
+    <li ng-repeat="x in wishes">{{x}}<span ng-click="removeWish($index)">×</span></li>
+  </ul>
+  <input ng-model="addMe">
+  <button ng-click="addWish()">Add Wish</button>
+  <p>{{errortext}}</p>
+</div>
+
+<p style="color:green;">This Year's To Do List Will Be Amazing!!</p>
+
+</body>
+</html>
