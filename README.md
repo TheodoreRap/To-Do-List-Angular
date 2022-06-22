@@ -1,4 +1,4 @@
-# To-Do-List-Angular
+# To Do List Angular
 
 A To Do List using
 
