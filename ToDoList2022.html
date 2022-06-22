@@ -6,6 +6,7 @@
 <p style="font-size:25px;"> TO DO LIST <p>
 
 <script>
+    
 var app = angular.module("ToDoList2022", []); 
 app.controller("myCtrl", function($scope) {
     $scope.wishes = ["Climb Everest", "Learn To Play the Piano", "Buy New Car", "Go Out With Friends More"];
@@ -25,6 +26,7 @@ app.controller("myCtrl", function($scope) {
         $scope.wishes.splice(x, 1);
     }
 });
+    
 </script>
 
 <div ng-app="ToDoList2022" ng-controller="myCtrl">
